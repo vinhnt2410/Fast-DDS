@@ -30,6 +30,8 @@
 #include <rtps/flowcontrol/FlowController.h>
 #include <rtps/participant/RTPSParticipantImpl.h>
 
+#include <utils/Host.hpp>
+
 #include <mutex>
 
 namespace eprosima {
@@ -102,6 +104,8 @@ void RTPSWriter::init(
         const std::shared_ptr<IChangePool>& change_pool,
         const WriterAttributes& att)
 {
+    eprosima::Host::get();
+
     payload_pool_ = payload_pool;
     change_pool_ = change_pool;
     fixed_payload_size_ = 0;
