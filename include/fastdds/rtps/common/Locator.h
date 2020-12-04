@@ -298,6 +298,7 @@ inline std::istream& operator >>(
 
         try
         {
+            std::string str_locator;
             input.exceptions(excp_mask | std::ios_base::failbit | std::ios_base::badbit);
 
             // Locator info
